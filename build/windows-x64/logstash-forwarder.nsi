@@ -25,8 +25,8 @@ Section "Installer"
 
   ; Install and setup the service
   ExecWait '$INSTDIR\nssm.exe. install Logstash-Forwarder "$INSTDIR\logstash-forwarder.exe" "-config=logstash-forwarder.conf"'
-  WriteRegStr HKLM "System\CurrentControlSet\Services\Logstash-Forwarder\Parameters" "AppStdout" "C:\logs\logstash-forwarder\outanderror.log"
-  WriteRegStr HKLM "System\CurrentControlSet\Services\Logstash-Forwarder\Parameters" "AppStderr" "C:\logs\logstash-forwarder\outanderror.log"
+  WriteRegStr HKLM "System\CurrentControlSet\Services\Logstash-Forwarder\Parameters" "AppStdout" "C:\logs\logstash-forwarder\out.log"
+  WriteRegStr HKLM "System\CurrentControlSet\Services\Logstash-Forwarder\Parameters" "AppStderr" "C:\logs\logstash-forwarder\error.log"
   WriteRegDWORD HKLM "System\CurrentControlSet\Services\Logstash-Forwarder\Parameters" "AppRotate" 1
   WriteRegDWORD HKLM "System\CurrentControlSet\Services\Logstash-Forwarder\Parameters" "AppRotateBytes" 52428800
 
